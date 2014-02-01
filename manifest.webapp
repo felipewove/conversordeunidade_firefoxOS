@@ -1,0 +1,14 @@
+{
+  "name": "Conversor",
+  "description": "Conversor de Unidade para Firefox OS deseolvido durante a hackathon na Campus Party 7 em 2014",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/icon_128.png",
+	"60": "/img/icon_60.png"
+  },
+  "developer": {
+    "name": "Felipe Brigatto e Anna Almeida",
+    "url": "https://www.facebook.com/annabreganholi"
+  },
+  "default_locale": "pt"
+}

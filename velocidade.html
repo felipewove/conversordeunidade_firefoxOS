@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Conversor de Velocidade</title>
+		<meta charset="UTF-8" />
+		<style type="text/css"></style>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<script type="text/javascript">
+			function updateOutput() {
+				var form = document.getElementById("conversor");
+				var out = form.elements["saida"];
+				var variavel = parseFloat(form.elements["variavel"].value);
+				var unidadeFinal = parseInt(form.elements["unidadeFinal"].value);
+				var unidadeInicial = parseInt(form.elements["unidadeInicial"].value);
+
+				switch(unidadeInicial){
+					case 0:
+						switch(unidadeFinal){
+							case 0:
+								out.value = variavel*1;
+								break;
+							case 1:
+								out.value = variavel*3.6;
+								break;
+							case 2:
+								out.value = variavel*2.23693629;
+								break;
+							case 3:
+								out.value = variavel*3.2808399;
+								break;
+							case 4:
+								out.value = variavel*196.850394;
+								break;
+							case 5:
+								out.value = variavel*1.94384449;
+								break;
+							default:
+								break;
+						}
+						break;
+					case 1: 
+						switch(unidadeFinal){
+							case 0:
+								out.value = variavel*0.277777778;
+								break;
+							case 1:
+								out.value = variavel*1;
+								break;
+							case 2:
+								out.value = variavel*0.621371192;
+								break;
+							case 3:
+								out.value = variavel*0.911344415;
+								break;
+							case 4:
+								out.value = variavel*54.6806649;
+								break;
+							case 5:
+								out.value = variavel*0.539956803;
+								break;
+							default:
+								break;
+						}
+						break;
+					case 2: 
+						switch(unidadeFinal){
+							case 0:
+								out.value = variavel*0.44704;
+								break;
+							case 1:
+								out.value = variavel*0.0268224;
+								break;
+							case 2:
+								out.value = variavel*1;
+								break;
+							case 3:
+								out.value = variavel*1.46666667;
+								break;
+							case 4:
+								out.value = variavel*88;
+								break;
+							case 5:
+								out.value = variavel*0.868976242;
+								break;
+							default:
+								break;
+						}
+						break;
+					case 3: 
+						switch(unidadeFinal){
+							case 0:
+								out.value = variavel*453592.37;
+								break;
+							case 1:
+								out.value = variavel*0.3048;
+								break;
+							case 2:
+								out.value = variavel*0.681818182;
+								break;
+							case 3:
+								out.value = variavel*1;
+								break;
+							case 4:
+								out.value = variavel*60;
+								break;
+							case 5:
+								out.value = variavel*0.592483801;
+								break;
+							default:
+								break;
+						}
+						break;
+					case 4: 
+						switch(unidadeFinal){
+							case 0:
+								out.value = variavel*0.00508;
+								break;
+							case 1:
+								out.value = variavel*0.018288;
+								break;
+							case 2:
+								out.value = variavel*0.0113636364;
+								break;
+							case 3:
+								out.value = variavel*0.0166666667;
+								break;
+							case 4:
+								out.value = variavel*1;
+								break;
+							case 5:
+								out.value = variavel*0.00987473002;
+								break;
+							default:
+								break;
+						}
+						break;
+					case 5: 
+						switch(unidadeFinal){
+							case 0:
+								out.value = variavel*0.514444444;
+								break;
+							case 1:
+								out.value = variavel*1.852008;
+								break;
+							case 2:
+								out.value = variavel*1.15077945;
+								break;
+							case 3:
+								out.value = variavel*1.68780986;
+								break;
+							case 4:
+								out.value = variavel*101.268591;
+								break;
+							case 5:
+								out.value = variavel*1;
+								break;
+							default:
+								break;
+						}
+						break;
+					default:
+						break;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="container" style="text-align:center">
+			<div class="row">
+				<h1>Conversor de Velocidade</h1>
+			</div>
+
+			<div class="row">
+				<form role="form" id="conversor" oninput="updateOutput()">
+					<div class="col-md-2">
+						<input class="form-control" id="variavel" name="variavel" type="number" value="0">
+					</div>
+
+					<div class="col-md-2">
+						<select id="unidadeInicial" name="unidadeInicial" class="form-control" onchange="updateOutput()">
+							<option value="0">m/s</option>
+							<option value="1">km/h</option>
+							<option value="2">mph</option>
+							<option value="3">ft/s</option>
+							<option value="4">ft/min</option>
+							<option value="5">nós</option>
+						</select>
+					</div>
+					
+					<div class="col-md-2">
+						<h5>para</h5>
+					</div>
+
+					<div class="col-md-2">
+						<output id="saida" name="saida" for="variavel unidadeInicial">0</output>
+					</div>
+
+					<div class="col-md-2">
+						<select id="unidadeFinal" name="unidadeFinal" class="form-control" onchange="updateOutput()">
+							<option value="0">m/s</option>
+							<option value="1">km/h</option>
+							<option value="2">mph</option>
+							<option value="3">ft/s</option>
+							<option value="4">ft/min</option>
+							<option value="5">nós</option>
+						</select>
+					</div>
+
+
+					<!-- 
+					<div class="col-md-11">
+						<br><button class="btn" type="submit">Converter!</button>
+					</div>
+		 			-->
+
+			<div class="row">
+				<h4> <a href="index.html" class="btn btn-warning">VOLTAR</a> </h4>
+			</div>		
+
+				</div>
+			</form>
+
+
+
+		</div>
+	</body>
+</html>

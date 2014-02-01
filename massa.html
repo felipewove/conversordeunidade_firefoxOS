@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Conversor de Massas</title>
+		<meta charset="UTF-8" />
+		<style type="text/css"></style>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<script type="text/javascript">
+			function updateOutput() {
+				var form = document.getElementById("conversor");
+				var out = form.elements["saida"];
+				var variavel = parseFloat(form.elements["variavel"].value);
+				var unidadeFinal = parseInt(form.elements["unidadeFinal"].value);
+				var unidadeInicial = parseInt(form.elements["unidadeInicial"].value);
+
+				switch(unidadeInicial){
+					case 0:
+						switch(unidadeFinal){
+							case 0:
+								out.value = variavel*1;
+								break;
+							case 1:
+								out.value = variavel*0.001;
+								break;
+							case 2:
+								out.value = variavel*0.000001;
+								break;
+							case 3:
+								out.value = variavel*0.0000022046;
+								break;
+							case 4:
+								out.value = variavel*0.000035274;
+								break;
+							default:
+								break;
+						}
+						break;
+					case 1: 
+						switch(unidadeFinal){
+							case 0:
+								out.value = variavel*1000;
+								break;
+							case 1:
+								out.value = variavel*1;
+								break;
+							case 2:
+								out.value = variavel*0.001;
+								break;
+							case 3:
+								out.value = variavel*0.00220462262;
+								break;
+							case 4:
+								out.value = variavel*0.0352739619;
+								break;
+							default:
+								break;
+						}
+						break;
+					case 2: 
+						switch(unidadeFinal){
+							case 0:
+								out.value = variavel*0.000001;
+								break;
+							case 1:
+								out.value = variavel*0.001;
+								break;
+							case 2:
+								out.value = variavel*1;
+								break;
+							case 3:
+								out.value = variavel*2.20462262;
+								break;
+							case 4:
+								out.value = variavel*35.2739619;
+								break;
+							default:
+								break;
+						}
+						break;
+					case 3: 
+						switch(unidadeFinal){
+							case 0:
+								out.value = variavel*453592.37;
+								break;
+							case 1:
+								out.value = variavel*453.59237;
+								break;
+							case 2:
+								out.value = variavel*0.45359237;
+								break;
+							case 3:
+								out.value = variavel*1;
+								break;
+							case 4:
+								out.value = variavel*16;
+								break;
+							default:
+								break;
+						}
+						break;
+					case 4: 
+						switch(unidadeFinal){
+							case 0:
+								out.value = variavel*28349.5231;
+								break;
+							case 1:
+								out.value = variavel*28.3495231;
+								break;
+							case 2:
+								out.value = variavel*0.0283495231;
+								break;
+							case 3:
+								out.value = variavel*0.0625;
+								break;
+							case 4:
+								out.value = variavel*1;
+								break;
+							default:
+								break;
+						}
+						break;
+					default:
+						break;
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="container" style="text-align:center">
+			<div class="row">
+				<h1>Conversor de Massas</h1>
+			</div>
+
+			<div class="row">
+				<form role="form" id="conversor" oninput="updateOutput()">
+					<div class="col-md-2">
+						<input class="form-control" id="variavel" name="variavel" type="number" value="0">
+					</div>
+
+					<div class="col-md-2">
+						<select id="unidadeInicial" name="unidadeInicial" class="form-control" onchange="updateOutput()">
+							<option value="0">mg</option>
+							<option value="1">g</option>
+							<option value="2">kg</option>
+							<option value="3">pounds</option>
+							<option value="4">oz</option>
+						</select>
+					</div>
+					
+					<div class="col-md-2">
+						<h5>para</h5>
+					</div>
+
+					<div class="col-md-2">
+						<output id="saida" name="saida" for="variavel unidadeInicial">0</output>
+					</div>
+
+					<div class="col-md-2">
+						<select id="unidadeFinal" name="unidadeFinal" class="form-control" onchange="updateOutput()">
+							<option value="0">mg</option>
+							<option value="1">g</option>
+							<option value="2">kg</option>
+							<option value="3">pounds</option>
+							<option value="4">oz</option>
+						</select>
+					</div>
+
+
+					<!-- 
+					<div class="col-md-11">
+						<br><button class="btn" type="submit">Converter!</button>
+					</div>
+		 			-->
+			<div class="row">
+				<h4> <a href="index.html" class="btn btn-warning">VOLTAR</a> </h4>
+			</div>
+		 			
+
+				</div>
+			</form>
+
+
+
+		</div>
+	</body>
+</html>
